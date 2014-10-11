@@ -7,7 +7,7 @@
     <% @posts.each do |post| %>
       <li class="list-group-item">
         <%= link_to post.name, post.url, target: :blank %>
-        <%= post.upvotes %>
+        <span class="badge"><%= post.upvotes %></span>
       </li>
     <% end %>
   <% end %>
