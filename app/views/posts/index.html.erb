@@ -1,11 +1,11 @@
-<ul>
+<ul class="list-group">
   <% if @posts.empty? %>
-    <li>
+    <li class="list-group-item text-center">
       <h3>No posts yet :*(</h3>
     </li>
   <% else %>
     <% @posts.each do |post| %>
-      <li>
+      <li class="list-group-item">
         <%= link_to post.name, post.url, target: :blank %>
         <%= post.upvotes %>
       </li>
