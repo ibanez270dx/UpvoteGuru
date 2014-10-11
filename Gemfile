@@ -46,3 +46,5 @@ group :production do
   # Use PostgresQL on Heroku
   gem 'pg'
 end
+
+ruby '2.1.2'
