@@ -8,8 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'New Post', new_post_path %></li>
+      </ul>
+      <h3 class="text-muted">Upvote.Guru</h3>
+    </div>
+    <br />
 
-<%= yield %>
+    <%= yield %>
 
+  </div>
 </body>
 </html>
