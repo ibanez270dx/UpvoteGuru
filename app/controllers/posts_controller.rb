@@ -20,11 +20,18 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    post = Post.find params[:id]
-    post.upvotes += 1
-    post.save
+    session[:voted_on] ||= []
 
-    flash[:notice] = "Upvoted successfully!"
+    if session[:voted_on].include?(params[:id])
+      flash[:notice] = "You can't vote more than once on the same post ;)"
+    else
+      post = Post.find params[:id]
+      post.upvotes += 1
+      post.save
+
+      session[:voted_on] << params[:id]
+      flash[:notice] = "Upvoted successfully!"
+    end
     redirect_to root_path
   end
 
