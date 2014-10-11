@@ -3,6 +3,7 @@
 <head>
   <title>Upvote.Guru</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,6 +12,12 @@
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
+        <li class="github">
+          <%= link_to 'https://github.com/ibanez270dx/UpvoteGuru', class: 'pull-right', target: '_blank' do %>
+            <i class="fa fa-github"></i> View GitHub Repo
+          <% end %>
+        </li>
+
         <% action = controller.action_name %>
         <li class="<%= 'active' if action=='index' %>"><%= link_to 'Home', root_path %></li>
         <li class="<%= 'active' if action=='new' || action=='create' %>"><%= link_to 'New Post', new_post_path %></li>
