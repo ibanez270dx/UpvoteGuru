@@ -19,4 +19,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    post = Post.find params[:id]
+    post.upvotes += 1
+    post.save
+
+    flash[:notice] = "Upvoted successfully!"
+    redirect_to root_path
+  end
+
 end
