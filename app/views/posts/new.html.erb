@@ -1,3 +1,16 @@
+<% unless @post.errors.empty? %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h4>There were error(s) on the page:</h4>
+      <ul>
+        <% @post.errors.each do |field, message| %>
+          <li><%= field %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
 <%= form_for @post, url: create_post_path do |f| %>
   <div class="form-group">
     <%= f.label :name %>
