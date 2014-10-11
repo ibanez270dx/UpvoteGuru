@@ -11,8 +11,9 @@
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'New Post', new_post_path %></li>
+        <% action = controller.action_name %>
+        <li class="<%= 'active' if action=='index' %>"><%= link_to 'Home', root_path %></li>
+        <li class="<%= 'active' if action=='new' || action=='create' %>"><%= link_to 'New Post', new_post_path %></li>
       </ul>
       <h3 class="text-muted">Upvote.Guru</h3>
     </div>
