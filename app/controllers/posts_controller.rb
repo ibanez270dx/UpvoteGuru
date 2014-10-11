@@ -9,7 +9,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new params.require(:post).permit(:name, :url)
 
+    if @post.save
+      flash[:notice] = "Post added successfully!"
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
 end
