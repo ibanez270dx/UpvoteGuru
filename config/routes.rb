@@ -55,6 +55,9 @@ Rails.application.routes.draw do
   #   end
 
   root 'posts#index'
+
   get  'posts/new'    => 'posts#new',    as: :new_post
   post 'posts/create' => 'posts#create', as: :create_post
+
+  get  'post/:id/upvote' => 'posts#upvote', as: :upvote
 end
