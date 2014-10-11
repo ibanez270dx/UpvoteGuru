@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UpvoteGuru</title>
+  <title>Upvote.Guru</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,6 +18,14 @@
       <h3 class="text-muted">Upvote.Guru</h3>
     </div>
     <br />
+
+    <% if flash[:notice].present? %>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <%= flash[:notice] %>
+        </div>
+      </div>
+    <% end %>
 
     <%= yield %>
 
