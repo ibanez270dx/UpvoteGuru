@@ -1,3 +1,11 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.upvote {
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+  color: #888;
+  margin-right: 10px;
+}

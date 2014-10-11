@@ -6,6 +6,10 @@
   <% else %>
     <% @posts.each do |post| %>
       <li class="list-group-item">
+        <%= link_to upvote_path(post), class: 'upvote' do %>
+          <i class="glyphicon glyphicon-arrow-up"></i>
+        <% end %>
+
         <%= link_to post.name, post.url, target: :blank %>
         <span class="badge"><%= post.upvotes %></span>
       </li>
